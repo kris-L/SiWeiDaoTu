@@ -1,13 +1,11 @@
-package com.kris.siweidaotu;
+package com.example.siweidaotu;
 
-import com.example.siweidaotu.R;
-
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
