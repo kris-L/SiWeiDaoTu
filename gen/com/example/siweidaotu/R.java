@@ -8,7 +8,52 @@
 package com.example.siweidaotu;
 
 public final class R {
+    public static final class anim {
+        public static final int actionsheet_dialog_in=0x7f040000;
+        public static final int actionsheet_dialog_out=0x7f040001;
+        public static final int activity_in=0x7f040002;
+        public static final int activity_out=0x7f040003;
+        public static final int activity_slide_left_in=0x7f040004;
+        public static final int activity_slide_left_out=0x7f040005;
+        public static final int activity_slide_right_in=0x7f040006;
+        public static final int activity_slide_right_out=0x7f040007;
+        public static final int fade_in=0x7f040008;
+        public static final int fade_out=0x7f040009;
+        public static final int loading_gif=0x7f04000a;
+    }
     public static final class attr {
+    }
+    public static final class color {
+        public static final int bg_gray=0x7f050009;
+        public static final int bgray=0x7f050003;
+        public static final int black=0x7f050002;
+        public static final int blue=0x7f050006;
+        public static final int camera_orange=0x7f050014;
+        public static final int common_bg_color=0x7f050008;
+        public static final int common_theme_color=0x7f05000b;
+        public static final int common_topbar_color=0x7f05000a;
+        public static final int font_light_gray_color=0x7f05000c;
+        public static final int gray=0x7f050001;
+        public static final int green=0x7f050004;
+        /**  main 
+         */
+        public static final int home_bg=0x7f050019;
+        public static final int logout_btn_bg=0x7f050010;
+        public static final int logout_btn_bg_pressed=0x7f05000f;
+        public static final int more_line=0x7f05000d;
+        public static final int more_select_bg=0x7f05000e;
+        public static final int orange_btn_bg_down_color=0x7f050018;
+        public static final int orange_btn_bg_up_color=0x7f050017;
+        public static final int red=0x7f050005;
+        public static final int resetpass_btn_bg=0x7f050012;
+        public static final int resetpass_btn_bg_pressed=0x7f050011;
+        public static final int statistics_tprice_bg=0x7f050015;
+        public static final int str_orange=0x7f050013;
+        public static final int transparent=0x7f050007;
+        /**  基本颜色 
+         */
+        public static final int white=0x7f050000;
+        public static final int whiteGray=0x7f050016;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -18,35 +63,58 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int buttom_bg=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int loading00=0x7f020002;
+        public static final int loading01=0x7f020003;
+        public static final int loading02=0x7f020004;
+        public static final int loading03=0x7f020005;
+        public static final int loading04=0x7f020006;
+        public static final int loading05=0x7f020007;
+        public static final int loading06=0x7f020008;
+        public static final int loading07=0x7f020009;
+        public static final int loading08=0x7f02000a;
+        public static final int loading09=0x7f02000b;
+        public static final int loading10=0x7f02000c;
+        public static final int loading11=0x7f02000d;
+        public static final int main_bg=0x7f02000e;
     }
     public static final class id {
-        public static final int action_settings=0x7f080000;
+        public static final int action_settings=0x7f0a0000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050002;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050001;
+        public static final int action_settings=0x7f070002;
+        public static final int app_name=0x7f070000;
+        public static final int hello_world=0x7f070001;
     }
     public static final class style {
+        /**  窗体淡入淡出动画 
+         */
+        public static final int AnimBottom=0x7f080003;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -60,10 +128,15 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f080001;
+        /**  模糊 
+         */
+        public static final int IOScheds=0x7f080002;
+        public static final int PlateAnimation_Activity=0x7f080005;
+        public static final int Theme_IOSched=0x7f080004;
     }
 }
