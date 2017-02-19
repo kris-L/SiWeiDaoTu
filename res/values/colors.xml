@@ -31,6 +31,10 @@
     
     <!-- main -->
     <color name="home_bg">#1F2123</color>
+    
+    <color name="text_red_color">#f42472</color>
+    <color name="border_gray_color">#D0D0D0</color>
+    <color name="blue_bg_color">#00CEB8</color>
 
 
 </resources>

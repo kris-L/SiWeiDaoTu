@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.siweidaotu;
+package com.kris.siweidaotu;
 
 public final class R {
     public static final class anim {
@@ -28,6 +28,8 @@ public final class R {
         public static final int bgray=0x7f050003;
         public static final int black=0x7f050002;
         public static final int blue=0x7f050006;
+        public static final int blue_bg_color=0x7f05001c;
+        public static final int border_gray_color=0x7f05001b;
         public static final int camera_orange=0x7f050014;
         public static final int common_bg_color=0x7f050008;
         public static final int common_theme_color=0x7f05000b;
@@ -49,6 +51,7 @@ public final class R {
         public static final int resetpass_btn_bg_pressed=0x7f050011;
         public static final int statistics_tprice_bg=0x7f050015;
         public static final int str_orange=0x7f050013;
+        public static final int text_red_color=0x7f05001a;
         public static final int transparent=0x7f050007;
         /**  基本颜色 
          */
@@ -65,29 +68,70 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
+        /**  设置内容距离标题栏的高度 
+         */
+        public static final int setting_padding_top=0x7f060005;
+        /**  顶部菜单按钮字体大小 
+         */
+        public static final int topbar_btn_textsize=0x7f060004;
+        /**  顶部菜单的高度 
+         */
+        public static final int topbar_height=0x7f060003;
+        /**  顶部菜单主标题的字体大小 
+         */
+        public static final int topbar_title_textSize=0x7f060002;
     }
     public static final class drawable {
-        public static final int buttom_bg=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int loading00=0x7f020002;
-        public static final int loading01=0x7f020003;
-        public static final int loading02=0x7f020004;
-        public static final int loading03=0x7f020005;
-        public static final int loading04=0x7f020006;
-        public static final int loading05=0x7f020007;
-        public static final int loading06=0x7f020008;
-        public static final int loading07=0x7f020009;
-        public static final int loading08=0x7f02000a;
-        public static final int loading09=0x7f02000b;
-        public static final int loading10=0x7f02000c;
-        public static final int loading11=0x7f02000d;
-        public static final int main_bg=0x7f02000e;
+        public static final int back_btn_bg=0x7f020000;
+        public static final int back_btn_bg_down=0x7f020001;
+        public static final int back_btn_bg_up=0x7f020002;
+        public static final int border_gray=0x7f020003;
+        public static final int border_red=0x7f020004;
+        public static final int buttom_bg=0x7f020005;
+        public static final int circle_shape_blue=0x7f020006;
+        public static final int circular_bead_border=0x7f020007;
+        public static final int direction_four_icon=0x7f020008;
+        public static final int direction_one_icon=0x7f020009;
+        public static final int direction_three_icon=0x7f02000a;
+        public static final int direction_two_icon=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int loading00=0x7f02000d;
+        public static final int loading01=0x7f02000e;
+        public static final int loading02=0x7f02000f;
+        public static final int loading03=0x7f020010;
+        public static final int loading04=0x7f020011;
+        public static final int loading05=0x7f020012;
+        public static final int loading06=0x7f020013;
+        public static final int loading07=0x7f020014;
+        public static final int loading08=0x7f020015;
+        public static final int loading09=0x7f020016;
+        public static final int loading10=0x7f020017;
+        public static final int loading11=0x7f020018;
+        public static final int main_bg=0x7f020019;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0000;
+        public static final int action_settings=0x7f0a000f;
+        public static final int btn_topbar_left=0x7f0a000d;
+        public static final int btn_topbar_right=0x7f0a000e;
+        public static final int eight_node_rl=0x7f0a0009;
+        public static final int four_node_rl=0x7f0a0008;
+        public static final int picture_exam_tv=0x7f0a0001;
+        public static final int setting_tv=0x7f0a0002;
+        public static final int text_exam_tv=0x7f0a0000;
+        public static final int text_five_node_tv=0x7f0a0007;
+        public static final int text_four_node_tv=0x7f0a0006;
+        public static final int text_one_node_tv=0x7f0a0003;
+        public static final int text_three_node_tv=0x7f0a0005;
+        public static final int text_two_node_tv=0x7f0a0004;
+        public static final int title_layout=0x7f0a000b;
+        public static final int twelve_node_rl=0x7f0a000a;
+        public static final int txt_topbar_title=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_text_four_node=0x7f030001;
+        public static final int dialog_select_node=0x7f030002;
+        public static final int top_bar=0x7f030003;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -107,11 +151,13 @@ public final class R {
 
 
 
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
 
 
 
@@ -137,6 +183,7 @@ public final class R {
          */
         public static final int IOScheds=0x7f080002;
         public static final int PlateAnimation_Activity=0x7f080005;
+        public static final int SelfDialog=0x7f080006;
         public static final int Theme_IOSched=0x7f080004;
     }
 }

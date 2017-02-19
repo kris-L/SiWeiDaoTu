@@ -3,5 +3,15 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    
+     <!-- 顶部菜单主标题的字体大小 -->
+	<dimen name="topbar_title_textSize">18sp</dimen>
+	<!-- 顶部菜单的高度 -->
+	<dimen name="topbar_height">50dip</dimen>
+	<!-- 顶部菜单按钮字体大小 -->
+	<dimen name="topbar_btn_textsize">17sp</dimen>
+	<!-- 设置内容距离标题栏的高度 -->
+	<dimen name="setting_padding_top">15dp</dimen>
 
 </resources>
