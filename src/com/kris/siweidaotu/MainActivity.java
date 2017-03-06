@@ -2,8 +2,10 @@ package com.kris.siweidaotu;
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.ui.SettingActivity;
 import com.kris.siweidaotu.ui.TextFourNodeActivity;
 import com.kris.siweidaotu.ui.base.BaseActivity;
+import com.kris.siweidaotu.util.ActivityUtil;
 import com.kris.siweidaotu.util.DialogManage;
 import com.kris.siweidaotu.util.TimeUtil;
 
@@ -23,11 +25,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private TextView picture_exam_tv;
 	private TextView setting_tv;
 	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
 		initViews();
 	    initData();
 	}
@@ -54,10 +56,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		}
 		switch (v.getId()) {
 		case R.id.text_exam_tv:
-			Intent intent_four = new Intent(this, TextFourNodeActivity.class);
-			startActivity(intent_four);
-			
-//			DialogManage.selectNodeDialog(this, Const.TEXT_EXAM_TYPE);
+//			Intent intent_four = new Intent(this, TextFourNodeActivity.class);
+//			startActivity(intent_four);
+			DialogManage.selectNodeDialog(this, Const.TEXT_EXAM_TYPE);
 			
 			break;
 			
@@ -67,13 +68,21 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 			
 		case R.id.setting_tv:
-			
+			Intent intent_setting = new Intent(this, SettingActivity.class);
+			startActivity(intent_setting);
 			break;
 
 		default:
 			break;
 		}
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		System.out.println("MainActivity  onDestroy");
+	}
+	
 	
 
 	@Override
@@ -82,6 +91,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {

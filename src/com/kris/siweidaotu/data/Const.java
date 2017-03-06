@@ -105,5 +105,7 @@ public interface Const {
 	 */
 	public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
 	public static final String ORDER_PAY_OK_ACTION = "ORDER_PAY_OK_ACTION";
-
+	
+	public static final String LOG_OUT_ACTION = "log_out_action";
+	
 }

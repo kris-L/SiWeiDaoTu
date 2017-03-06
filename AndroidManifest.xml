@@ -25,14 +25,40 @@
         </activity>
         
         
-        <!-- 四个节点引导 -->
+        <!-- 文字-四个节点引导 -->
         <activity
             android:name=".ui.TextFourNodeActivity"
             android:screenOrientation="landscape"
             android:windowSoftInputMode="stateHidden|adjustResize" 
             />
         
+        <!-- 文字-八个节点引导 -->
+        <activity
+            android:name=".ui.TextEightNodeActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
+            />
         
+        <!-- 文字-十二个节点引导 -->
+        <activity
+            android:name=".ui.TextTwelveNodeActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
+            />
+        
+        <!-- 关于我们-->
+        <activity
+            android:name=".ui.AboutUsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
+            />
+        
+       <!-- 设置-->
+        <activity
+            android:name=".ui.SettingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
+            />
         
         
     </application>

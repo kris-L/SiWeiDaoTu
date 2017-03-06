@@ -1,10 +1,12 @@
 package com.kris.siweidaotu.util;
 
-import java.math.BigDecimal; 
+import java.math.BigDecimal;  
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.ui.TextEightNodeActivity;
 import com.kris.siweidaotu.ui.TextFourNodeActivity;
+import com.kris.siweidaotu.ui.TextTwelveNodeActivity;
 import com.kris.siweidaotu.ui.view.SelfDialog;
 
 import android.app.ActionBar.LayoutParams;
@@ -57,7 +59,6 @@ public class DialogManage {
 				if (type == Const.TEXT_EXAM_TYPE) {
 					Intent intent_four = new Intent(mContext, TextFourNodeActivity.class);
 					mContext.startActivity(intent_four);
-					
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
 					
 				}
@@ -71,7 +72,8 @@ public class DialogManage {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (type == Const.TEXT_EXAM_TYPE) {
-					
+					Intent intent_four = new Intent(mContext, TextEightNodeActivity.class);
+					mContext.startActivity(intent_four);
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
 					
 				}
@@ -85,7 +87,8 @@ public class DialogManage {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (type == Const.TEXT_EXAM_TYPE) {
-					
+					Intent intent_four = new Intent(mContext, TextTwelveNodeActivity.class);
+					mContext.startActivity(intent_four);
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
 					
 				}

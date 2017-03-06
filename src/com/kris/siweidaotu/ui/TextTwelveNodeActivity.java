@@ -40,7 +40,7 @@ import com.kris.siweidaotu.util.ActivityUtil;
 import com.kris.siweidaotu.util.DateUtil;
 import com.kris.siweidaotu.util.TimeUtil;
 
-public class TextFourNodeActivity extends BaseActivity implements
+public class TextTwelveNodeActivity extends BaseActivity implements
 		OnClickListener, OnItemClickListener {
 
 	private TextView text_one_node_tv;
@@ -48,6 +48,15 @@ public class TextFourNodeActivity extends BaseActivity implements
 	private TextView text_three_node_tv;
 	private TextView text_four_node_tv;
 	private TextView text_five_node_tv;
+	private TextView text_six_node_tv;
+	private TextView text_seven_node_tv ;
+	private TextView text_eight_node_tv;
+	private TextView text_nine_node_tv;
+	private TextView text_ten_node_tv;
+	private TextView text_eleven_node_tv ;
+	private TextView text_twelve_node_tv;
+	private TextView text_thirteen_node_tv;
+	
 	private UnScrollGridView node_gv;
 
 	private Context mContext;
@@ -58,6 +67,15 @@ public class TextFourNodeActivity extends BaseActivity implements
 	private String randomStr3 = "";
 	private String randomStr4 = "";
 	private String randomStr5 = "";
+	private String randomStr6 = "";
+	private String randomStr7 = "";
+	private String randomStr8 = "";
+	private String randomStr9 = "";
+	private String randomStr10 = "";
+	private String randomStr11 = "";
+	private String randomStr12 = "";
+	private String randomStr13 = "";
+	
 	private String wordGroup[];
 	private int selectNode = -1;
 	private int selectItem = -1;
@@ -76,14 +94,14 @@ public class TextFourNodeActivity extends BaseActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		baseSetBodyView(R.layout.activity_text_four_node, true);
+		baseSetBodyView(R.layout.activity_text_twelve_node, true);
 		setBtnLeftOnClickListener(this);
 		mContext = this;
 
 		setBtnLeftBackground(R.drawable.back_red);
 		setBtnLeftVisiable(true);
 		setBtnLeftOnClickListener(this);
-		setTitleText("文字通关-4个节点");
+		setTitleText("文字通关-8个节点");
 		setBtnRightBackground(R.drawable.circular_bead_border_white);
 		setBtnRightVisiable(true);
 		setBtnRightOnClickListener(this);
@@ -105,12 +123,29 @@ public class TextFourNodeActivity extends BaseActivity implements
 		text_three_node_tv = (TextView) findViewById(R.id.text_three_node_tv);
 		text_four_node_tv = (TextView) findViewById(R.id.text_four_node_tv);
 		text_five_node_tv = (TextView) findViewById(R.id.text_five_node_tv);
-
+		text_six_node_tv = (TextView) findViewById(R.id.text_six_node_tv);
+		text_seven_node_tv = (TextView) findViewById(R.id.text_seven_node_tv);
+		text_eight_node_tv = (TextView) findViewById(R.id.text_eight_node_tv);
+		text_nine_node_tv = (TextView) findViewById(R.id.text_nine_node_tv);
+		text_ten_node_tv= (TextView) findViewById(R.id.text_ten_node_tv);
+		text_eleven_node_tv= (TextView) findViewById(R.id.text_eleven_node_tv); 
+		text_twelve_node_tv= (TextView) findViewById(R.id.text_twelve_node_tv);
+		text_thirteen_node_tv= (TextView) findViewById(R.id.text_thirteen_node_tv);
+		
+		
 		textViewList.add(text_one_node_tv);
 		textViewList.add(text_two_node_tv);
 		textViewList.add(text_three_node_tv);
 		textViewList.add(text_four_node_tv);
 		textViewList.add(text_five_node_tv);
+		textViewList.add(text_six_node_tv);
+		textViewList.add(text_seven_node_tv);
+		textViewList.add(text_eight_node_tv);
+		textViewList.add(text_nine_node_tv);
+		textViewList.add(text_ten_node_tv);
+		textViewList.add(text_eleven_node_tv);
+		textViewList.add(text_twelve_node_tv);
+		textViewList.add(text_thirteen_node_tv);
 		
 		node_gv = (UnScrollGridView) findViewById(R.id.node_gv);
 		node_gv.setOnItemClickListener(this);
@@ -120,19 +155,34 @@ public class TextFourNodeActivity extends BaseActivity implements
 		text_three_node_tv.setOnClickListener(this);
 		text_four_node_tv.setOnClickListener(this);
 		text_five_node_tv.setOnClickListener(this);
+		text_six_node_tv.setOnClickListener(this);
+		text_seven_node_tv.setOnClickListener(this);
+		text_eight_node_tv.setOnClickListener(this);
+		text_nine_node_tv.setOnClickListener(this);
+		text_ten_node_tv.setOnClickListener(this);
+		text_eleven_node_tv.setOnClickListener(this);
+		text_twelve_node_tv.setOnClickListener(this);
+		text_thirteen_node_tv.setOnClickListener(this);
+		
 	}
 
 	@SuppressLint("NewApi")
 	private void initData() {
-		selectNode = -1;
-		selectItem = -1;
-		
+
 		Random random = new Random();
 		randomStr1 = wordGroup[random.nextInt(999)];
 		randomStr2 = wordGroup[random.nextInt(999)];
 		randomStr3 = wordGroup[random.nextInt(999)];
 		randomStr4 = wordGroup[random.nextInt(999)];
 		randomStr5 = wordGroup[random.nextInt(999)];
+		randomStr6 = wordGroup[random.nextInt(999)];
+		randomStr7 = wordGroup[random.nextInt(999)];
+		randomStr8 = wordGroup[random.nextInt(999)];
+		randomStr9 = wordGroup[random.nextInt(999)];
+		randomStr10 = wordGroup[random.nextInt(999)];
+		randomStr11 = wordGroup[random.nextInt(999)];
+		randomStr12 = wordGroup[random.nextInt(999)];
+		randomStr13 = wordGroup[random.nextInt(999)];
 
 		tempData.clear();
 		tempData.add(randomStr1);
@@ -140,8 +190,17 @@ public class TextFourNodeActivity extends BaseActivity implements
 		tempData.add(randomStr3);
 		tempData.add(randomStr4);
 		tempData.add(randomStr5);
+		tempData.add(randomStr6);
+		tempData.add(randomStr7);
+		tempData.add(randomStr8);
+		tempData.add(randomStr9);
+		tempData.add(randomStr10);
+		tempData.add(randomStr11);
+		tempData.add(randomStr12);
+		tempData.add(randomStr13);
+		
 		nodeData.clear();
-		int[] intRandom = GetRandomSequence(5);
+		int[] intRandom = GetRandomSequence(13);
 		for (int i = 0; i < intRandom.length; i++) {
 			nodeData.add(i,tempData.get(intRandom[i]));
 		}
@@ -158,6 +217,15 @@ public class TextFourNodeActivity extends BaseActivity implements
 		text_three_node_tv.setText(randomStr3);
 		text_four_node_tv.setText(randomStr4);
 		text_five_node_tv.setText(randomStr5);
+		text_six_node_tv.setText(randomStr6);
+		text_seven_node_tv.setText(randomStr7);
+		text_eight_node_tv.setText(randomStr8);
+		text_nine_node_tv.setText(randomStr9);
+		
+		text_ten_node_tv.setText(randomStr9);
+		text_eleven_node_tv.setText(randomStr9);
+		text_twelve_node_tv.setText(randomStr9);
+		text_thirteen_node_tv.setText(randomStr9);
 		
 		for (int i = 0; i < textViewList.size(); i++) {
 			textViewList.get(i).setBackground(getResources().
@@ -244,7 +312,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 0;
 				selectTextView(selectNode);
 			}
-			
 			break;
 
 		case R.id.text_two_node_tv:
@@ -260,6 +327,7 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 2;
 				selectTextView(selectNode);
 			}
+			
 			break;
 
 		case R.id.text_four_node_tv:
@@ -267,11 +335,64 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 3;
 				selectTextView(selectNode);
 			}
+			
 			break;
 
 		case R.id.text_five_node_tv:
 			if (memoryType == 3) {
 				selectNode = 4;
+				selectTextView(selectNode);
+			}
+			break;
+		case R.id.text_six_node_tv:
+			if (memoryType == 3) {
+				selectNode = 5;
+				selectTextView(selectNode);
+			}
+			break;
+		case R.id.text_seven_node_tv:
+			if (memoryType == 3) {
+				selectNode = 6;
+				selectTextView(selectNode);
+			}
+			break;
+		case R.id.text_eight_node_tv:
+			if (memoryType == 3) {
+				selectNode = 7;
+				selectTextView(selectNode);
+			}
+			break;
+		case R.id.text_nine_node_tv:
+			if (memoryType == 3) {
+				selectNode = 8;
+				selectTextView(selectNode);
+			}
+			break;
+			
+		case R.id.text_ten_node_tv:
+			if (memoryType == 3) {
+				selectNode = 9;
+				selectTextView(selectNode);
+			}
+			break;
+			
+		case R.id.text_eleven_node_tv:
+			if (memoryType == 3) {
+				selectNode = 10;
+				selectTextView(selectNode);
+			}
+			break;
+			
+		case R.id.text_twelve_node_tv:
+			if (memoryType == 3) {
+				selectNode = 11;
+				selectTextView(selectNode);
+			}
+			break;
+			
+		case R.id.text_thirteen_node_tv:
+			if (memoryType == 3) {
+				selectNode = 12;
 				selectTextView(selectNode);
 			}
 			break;

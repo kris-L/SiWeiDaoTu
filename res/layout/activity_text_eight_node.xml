@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView 
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     >
-
-<LinearLayout
+<LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -16,7 +16,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
         android:orientation="horizontal" >
 
         <LinearLayout
@@ -37,7 +36,7 @@
                 android:id="@+id/text_two_node_tv"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="120dp"
                 android:background="@drawable/circular_bead_border_white"
                 android:gravity="center"
                 android:text=""
@@ -53,20 +52,66 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/direction_one_icon" />
+                android:background="@drawable/icon_eight_node1" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/direction_two_icon" />
+                android:layout_marginTop="90dp"
+                android:background="@drawable/icon_eight_node2" />
         </LinearLayout>
+        
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_three_node_tv"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/circular_bead_border_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text_red_color" />
+
+            <TextView
+                android:id="@+id/text_four_node_tv"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/circular_bead_border_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text_red_color" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/icon_eight_node3" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_eight_node4" />
+        </LinearLayout>
+        
+        
 
         <TextView
-            android:id="@+id/text_three_node_tv"
+            android:id="@+id/text_five_node_tv"
             android:layout_width="70dp"
             android:layout_height="60dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="75dp"
             android:background="@drawable/circular_bead_border_white"
             android:gravity="center"
             android:text=""
@@ -81,14 +126,13 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/direction_three_icon" />
+                android:layout_marginTop="50dp"
+                android:background="@drawable/icon_eight_node5" />
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/direction_four_icon" />
+                android:background="@drawable/icon_eight_node6" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,7 +141,52 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/text_four_node_tv"
+                android:id="@+id/text_six_node_tv"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                 android:layout_marginTop="30dp"
+                android:background="@drawable/circular_bead_border_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text_red_color" />
+
+            <TextView
+                android:id="@+id/text_seven_node_tv"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/circular_bead_border_white"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/text_red_color" />
+        </LinearLayout>
+        
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/icon_eight_node7" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/icon_eight_node8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/text_eight_node_tv"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:background="@drawable/circular_bead_border_white"
@@ -106,15 +195,16 @@
                 android:textColor="@color/text_red_color" />
 
             <TextView
-                android:id="@+id/text_five_node_tv"
+                android:id="@+id/text_nine_node_tv"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="120dp"
                 android:background="@drawable/circular_bead_border_white"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/text_red_color" />
         </LinearLayout>
+        
     </LinearLayout>
     
 
@@ -123,11 +213,11 @@
         android:layout_width="480dp"
         android:layout_height="wrap_content"
         android:horizontalSpacing="0.0dip"
-        android:verticalSpacing="0.0dip" 
+        android:verticalSpacing="2dip" 
         android:listSelector="@null"
         android:numColumns="5"
         android:scrollbars="none"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:stretchMode="columnWidth"
@@ -136,5 +226,4 @@
         />
 
 </LinearLayout>
-
 </ScrollView>

@@ -375,12 +375,11 @@ public class BaseActivity extends Activity {
 		ActivityUtil.getInstance().popActivityClassList(list);
 	}
 
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		System.out.println("onDestroy");
-		ActivityUtil.getInstance().popActivity(this);
-	}
+//	@Override
+//	protected void onDestroy() {
+//		super.onDestroy();
+//		ActivityUtil.getInstance().popActivity(this);
+//	}
 
 	protected boolean isListNotNullOrEmpty(List<?> list) {
 
