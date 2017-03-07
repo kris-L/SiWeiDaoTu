@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.helper.LocalDataHelper;
 import com.kris.siweidaotu.ui.base.BaseActivity;
 import com.kris.siweidaotu.util.TimeUtil;
 
@@ -40,7 +41,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		baseSetBodyView(R.layout.activity_setting, true);
 		setTitleText("设置");
-		setBtnLeftBackground(R.drawable.back_btn_bg);
+		setBtnLeftBackground(R.drawable.back_red);
 		setBtnLeftVisiable(true);
 		setBtnLeftOnClickListener(this);
 
@@ -124,8 +125,7 @@ public class SettingActivity extends BaseActivity implements OnClickListener{
 			sendBroadcast(msgIntent);
 			
 //			LocalDataHelper.getInstance(this).remove();
-//			toActivity(LoginActivity.class);
-			finish();
+			toActivity(RegisterActivity.class);
 			break;
 
 		case R.id.setting_about_us_tv:

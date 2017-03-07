@@ -40,7 +40,7 @@ OnClickListener{
 	private Button wb_close_btn;
 	
 	private Context mContext;
-	private String urlStr = "http://vip.chepaipai.com.cn/help/index.html";
+	private String urlStr = "file:///android_asset/" + "aboutus.htm";
 	private String titleText = "";
 	private int type = 0;
 	private ValueCallback<Uri> mUploadMessage;
@@ -67,9 +67,10 @@ OnClickListener{
 		wb_left_btn.setOnClickListener(this);
 		wb_close_btn.setOnClickListener(this);
 		
-		titleText = getIntent().getStringExtra("titleText");
-		urlStr = getIntent().getStringExtra("urlStr");
-		type = getIntent().getIntExtra("type", 0);
+//		titleText = getIntent().getStringExtra("titleText");
+//		urlStr = getIntent().getStringExtra("urlStr");
+//		type = getIntent().getIntExtra("type", 0);
+		
 		wb_title_tv.setText(titleText);
 		
 		service_wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -77,7 +78,6 @@ OnClickListener{
 		javaScriptinterface = new JavaScriptinterface(this);
 		service_wv.addJavascriptInterface(javaScriptinterface,"jsObj");
 		
-		urlStr = "file:///android_asset/" + "aboutus.htm";
 		service_wv.loadUrl(urlStr);
 
 		service_wv.setWebViewClient(new WebViewClient() {

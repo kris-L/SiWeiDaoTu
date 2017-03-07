@@ -70,7 +70,7 @@
         android:layout_marginTop="49dp"
         android:background="@color/blue_bg_color"
         android:gravity="center"
-        android:text="退出登录"
+        android:text="注册"
         android:textSize="16dp"
         android:textColor="@color/white"
         android:layout_marginLeft="14dp"

@@ -245,6 +245,7 @@ public class TextEightNodeActivity extends BaseActivity implements
 		return output;
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -278,6 +279,14 @@ public class TextEightNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 0;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 
@@ -285,6 +294,14 @@ public class TextEightNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 1;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			
 			break;
@@ -293,6 +310,14 @@ public class TextEightNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 2;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			
 			break;
@@ -301,6 +326,14 @@ public class TextEightNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 3;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			
 			break;
@@ -309,30 +342,70 @@ public class TextEightNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 4;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 		case R.id.text_six_node_tv:
 			if (memoryType == 3) {
 				selectNode = 5;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 		case R.id.text_seven_node_tv:
 			if (memoryType == 3) {
 				selectNode = 6;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 		case R.id.text_eight_node_tv:
 			if (memoryType == 3) {
 				selectNode = 7;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 		case R.id.text_nine_node_tv:
 			if (memoryType == 3) {
 				selectNode = 8;
 				selectTextView(selectNode);
+				if (selectItem >= 0) {
+					textViewList.get(selectNode).setText(nodeData.get(selectItem));
+					textViewList.get(selectNode).setBackground(getResources().
+							getDrawable(R.drawable.circular_bead_border_pink));
+					selectNode = -1;
+					selectItem = -1;
+					nodeStrAdapter.notifyDataSetChanged();
+				}
 			}
 			break;
 			
@@ -456,13 +529,19 @@ public class TextEightNodeActivity extends BaseActivity implements
 		}
 	}
 
+	@SuppressLint("NewApi")
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
+		selectItem = position;
 		if (selectNode >= 0) {
 			textViewList.get(selectNode).setText(nodeData.get(position));
+			textViewList.get(selectNode).setBackground(getResources().
+					getDrawable(R.drawable.circular_bead_border_pink));
+			selectNode = -1;
+			selectItem = -1;
 		}
-		selectItem = position;
+		
 		nodeStrAdapter.notifyDataSetChanged();
 	}
 	

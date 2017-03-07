@@ -136,70 +136,93 @@ public final class R {
         public static final int main_bg=0x7f02002e;
     }
     public static final class id {
-        public static final int action_settings=0x7f0b0027;
-        public static final int btn_topbar_left=0x7f0b0021;
-        public static final int btn_topbar_right=0x7f0b0022;
-        public static final int cancel_tv=0x7f0b001a;
-        public static final int confirm_tv=0x7f0b0019;
-        public static final int dialog_text1_tv=0x7f0b0016;
-        public static final int dialog_text2_tv=0x7f0b0017;
-        public static final int dialog_text3_tv=0x7f0b0018;
-        public static final int eight_node_rl=0x7f0b001c;
-        public static final int four_node_rl=0x7f0b001b;
-        public static final int log_out_btn=0x7f0b0007;
-        public static final int node_gv=0x7f0b0011;
-        public static final int node_string_tv=0x7f0b001e;
+        public static final int action_settings=0x7f0b0031;
+        public static final int app_register=0x7f0b0009;
+        public static final int btn_topbar_left=0x7f0b002b;
+        public static final int btn_topbar_right=0x7f0b002c;
+        public static final int cancel_tv=0x7f0b0024;
+        public static final int confirm_tv=0x7f0b0023;
+        public static final int dialog_text1_tv=0x7f0b0020;
+        public static final int dialog_text2_tv=0x7f0b0021;
+        public static final int dialog_text3_tv=0x7f0b0022;
+        public static final int eight_node_rl=0x7f0b0026;
+        public static final int four_node_rl=0x7f0b0025;
+        public static final int jieTuBaoChun=0x7f0b0032;
+        public static final int log_out_btn=0x7f0b0011;
+        public static final int node_gv=0x7f0b001b;
+        public static final int node_string_tv=0x7f0b0028;
         public static final int picture_exam_tv=0x7f0b0001;
-        public static final int service_wv=0x7f0b0026;
-        public static final int setting_about_us_tv=0x7f0b0006;
-        public static final int setting_agreement_tv=0x7f0b0005;
+        public static final int registerBack=0x7f0b000a;
+        public static final int registerClear=0x7f0b000b;
+        public static final int registerCode=0x7f0b0005;
+        public static final int registerCopy=0x7f0b0006;
+        public static final int registerInput=0x7f0b0004;
+        public static final int registerShow=0x7f0b0003;
+        public static final int registerText=0x7f0b0007;
+        public static final int registerTiShi=0x7f0b000c;
+        public static final int service_wv=0x7f0b0030;
+        public static final int setting_about_us_tv=0x7f0b0010;
+        public static final int setting_agreement_tv=0x7f0b000f;
         public static final int setting_tv=0x7f0b0002;
-        public static final int text_eight_node_tv=0x7f0b000f;
-        public static final int text_eleven_node_tv=0x7f0b0013;
+        public static final int text_eight_node_tv=0x7f0b0019;
+        public static final int text_eleven_node_tv=0x7f0b001d;
         public static final int text_exam_tv=0x7f0b0000;
-        public static final int text_five_node_tv=0x7f0b000c;
-        public static final int text_four_node_tv=0x7f0b000b;
-        public static final int text_nine_node_tv=0x7f0b0010;
-        public static final int text_one_node_tv=0x7f0b0008;
-        public static final int text_seven_node_tv=0x7f0b000e;
-        public static final int text_six_node_tv=0x7f0b000d;
-        public static final int text_ten_node_tv=0x7f0b0012;
-        public static final int text_thirteen_node_tv=0x7f0b0015;
-        public static final int text_three_node_tv=0x7f0b000a;
-        public static final int text_twelve_node_tv=0x7f0b0014;
-        public static final int text_two_node_tv=0x7f0b0009;
-        public static final int title_layout=0x7f0b001f;
-        public static final int twelve_node_rl=0x7f0b001d;
-        public static final int txt_topbar_title=0x7f0b0020;
-        public static final int update_rl=0x7f0b0003;
-        public static final int versions_tv=0x7f0b0004;
-        public static final int wb_close_btn=0x7f0b0025;
-        public static final int wb_left_btn=0x7f0b0024;
-        public static final int wb_title_tv=0x7f0b0023;
+        public static final int text_five_node_tv=0x7f0b0016;
+        public static final int text_four_node_tv=0x7f0b0015;
+        public static final int text_nine_node_tv=0x7f0b001a;
+        public static final int text_one_node_tv=0x7f0b0012;
+        public static final int text_seven_node_tv=0x7f0b0018;
+        public static final int text_six_node_tv=0x7f0b0017;
+        public static final int text_ten_node_tv=0x7f0b001c;
+        public static final int text_thirteen_node_tv=0x7f0b001f;
+        public static final int text_three_node_tv=0x7f0b0014;
+        public static final int text_twelve_node_tv=0x7f0b001e;
+        public static final int text_two_node_tv=0x7f0b0013;
+        public static final int title_layout=0x7f0b0029;
+        public static final int twelve_node_rl=0x7f0b0027;
+        public static final int txt_topbar_title=0x7f0b002a;
+        public static final int update_rl=0x7f0b000d;
+        public static final int versions_tv=0x7f0b000e;
+        public static final int wb_close_btn=0x7f0b002f;
+        public static final int wb_left_btn=0x7f0b002e;
+        public static final int wb_title_tv=0x7f0b002d;
+        public static final int zhantie=0x7f0b0008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_setting=0x7f030001;
-        public static final int activity_text_eight_node=0x7f030002;
-        public static final int activity_text_four_node=0x7f030003;
-        public static final int activity_text_twelve_node=0x7f030004;
-        public static final int dialog_pass=0x7f030005;
-        public static final int dialog_select_node=0x7f030006;
-        public static final int item_select_node=0x7f030007;
-        public static final int one_line_tv=0x7f030008;
-        public static final int top_bar=0x7f030009;
-        public static final int webview=0x7f03000a;
+        public static final int activity_register=0x7f030001;
+        public static final int activity_setting=0x7f030002;
+        public static final int activity_text_eight_node=0x7f030003;
+        public static final int activity_text_four_node=0x7f030004;
+        public static final int activity_text_twelve_node=0x7f030005;
+        public static final int dialog_pass=0x7f030006;
+        public static final int dialog_select_node=0x7f030007;
+        public static final int item_select_node=0x7f030008;
+        public static final int one_line_tv=0x7f030009;
+        public static final int top_bar=0x7f03000a;
+        public static final int webview=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f0a0000;
+        public static final int register=0x7f0a0001;
     }
     public static final class raw {
         public static final int word_group=0x7f050000;
     }
     public static final class string {
+        public static final int EmptyValue=0x7f080004;
         public static final int action_settings=0x7f080002;
         public static final int app_name=0x7f080000;
+        public static final int app_register=0x7f080009;
         public static final int hello_world=0x7f080001;
+        public static final int pingMuJieTu=0x7f08000c;
+        public static final int registerBack=0x7f08000a;
+        public static final int registerClear=0x7f08000b;
+        public static final int registerCopy=0x7f080005;
+        public static final int registerShow=0x7f080003;
+        public static final int registerText=0x7f080006;
+        public static final int registerTextShow=0x7f080007;
+        public static final int zhantie=0x7f080008;
     }
     public static final class style {
         /**  窗体淡入淡出动画 
