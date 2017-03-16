@@ -1,13 +1,15 @@
 package com.kris.siweidaotu.ui;
 
-import java.io.BufferedReader;
+import java.io.BufferedReader; 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import android.annotation.SuppressLint;
@@ -33,12 +35,15 @@ import android.widget.TextView;
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.helper.LocalDataHelper;
 import com.kris.siweidaotu.ui.base.BaseActivity;
 import com.kris.siweidaotu.ui.view.SelfDialog;
 import com.kris.siweidaotu.ui.view.UnScrollGridView;
 import com.kris.siweidaotu.util.ActivityUtil;
 import com.kris.siweidaotu.util.DateUtil;
+import com.kris.siweidaotu.util.RandomNumUtil;
 import com.kris.siweidaotu.util.TimeUtil;
+import com.umeng.analytics.MobclickAgent;
 
 public class TextFourNodeActivity extends BaseActivity implements
 		OnClickListener, OnItemClickListener {
@@ -53,15 +58,11 @@ public class TextFourNodeActivity extends BaseActivity implements
 	private Context mContext;
 	/** 1:开始训练 2:记忆中 3：提交答案 */
 	private int memoryType = 1;
-	private String randomStr1 = "";
-	private String randomStr2 = "";
-	private String randomStr3 = "";
-	private String randomStr4 = "";
-	private String randomStr5 = "";
 	private String wordGroup[];
 	private int selectNode = -1;
 	private int selectItem = -1;
 
+	public static Map<Integer,Integer> selectMap = new HashMap<Integer,Integer>();
 	private List<String> nodeData = new ArrayList<String>();
 	private List<String> tempData = new ArrayList<String>();
 	private NodeStrAdapter nodeStrAdapter = null;
@@ -72,6 +73,7 @@ public class TextFourNodeActivity extends BaseActivity implements
 	private long completeTime = 0;
 	private int rightNum = 0;
 	private int errorNum = 0;
+	private int totalNode = 5;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,20 @@ public class TextFourNodeActivity extends BaseActivity implements
 //		initData();
 	}
 
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		MobclickAgent.onResume(this);
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		MobclickAgent.onPause(this);
+	}
+	
 	private void initViews() {
 		text_one_node_tv = (TextView) findViewById(R.id.text_one_node_tv);
 		text_two_node_tv = (TextView) findViewById(R.id.text_two_node_tv);
@@ -127,21 +143,15 @@ public class TextFourNodeActivity extends BaseActivity implements
 		selectNode = -1;
 		selectItem = -1;
 		
-		Random random = new Random();
-		randomStr1 = wordGroup[random.nextInt(999)];
-		randomStr2 = wordGroup[random.nextInt(999)];
-		randomStr3 = wordGroup[random.nextInt(999)];
-		randomStr4 = wordGroup[random.nextInt(999)];
-		randomStr5 = wordGroup[random.nextInt(999)];
-
+		int[] initRandom = RandomNumUtil.GetRandomSequence(totalNode,999);
 		tempData.clear();
-		tempData.add(randomStr1);
-		tempData.add(randomStr2);
-		tempData.add(randomStr3);
-		tempData.add(randomStr4);
-		tempData.add(randomStr5);
+		for (int i = 0; i < initRandom.length; i++) {
+			tempData.add(wordGroup[initRandom[i]]);
+			textViewList.get(i).setText(tempData.get(i));
+		}
+
 		nodeData.clear();
-		int[] intRandom = GetRandomSequence(5);
+		int[] intRandom = RandomNumUtil.GetRandomSequence(totalNode);
 		for (int i = 0; i < intRandom.length; i++) {
 			nodeData.add(i,tempData.get(intRandom[i]));
 		}
@@ -153,15 +163,12 @@ public class TextFourNodeActivity extends BaseActivity implements
 			nodeStrAdapter.notifyDataSetChanged();
 		}
 
-		text_one_node_tv.setText(randomStr1);
-		text_two_node_tv.setText(randomStr2);
-		text_three_node_tv.setText(randomStr3);
-		text_four_node_tv.setText(randomStr4);
-		text_five_node_tv.setText(randomStr5);
-		
 		for (int i = 0; i < textViewList.size(); i++) {
 			textViewList.get(i).setBackground(getResources().
 					getDrawable(R.drawable.circular_bead_border_pink));
+		}
+		for (int i = 0; i < totalNode; i++) {
+			selectMap.put(i, -1);
 		}
 
 	}
@@ -187,28 +194,8 @@ public class TextFourNodeActivity extends BaseActivity implements
 		return sb.toString();
 	}
 
-	/**
-	 * 生成不重复的随机数
-	 * @param total
-	 * @return
-	 */
-	public static int[] GetRandomSequence(int total) {
-		int[] sequence = new int[total];
-		int[] output = new int[total];
-
-		for (int i = 0; i < total; i++) {
-			sequence[i] = i;
-		}
-		Random random = new Random();
-		int end = total - 1;
-		for (int i = 0; i < total; i++) {
-			int num = random.nextInt(end + 1);
-			output[i] = sequence[num];
-			sequence[num] = sequence[end];
-			end--;
-		}
-		return output;
-	}
+	
+	
 
 	@SuppressLint("NewApi")
 	@Override
@@ -245,14 +232,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 0;
 				selectTextView(selectNode);
 				
-				if (selectItem >= 0) {
-					textViewList.get(selectNode).setText(nodeData.get(selectItem));
-					textViewList.get(selectNode).setBackground(getResources().
-							getDrawable(R.drawable.circular_bead_border_pink));
-					selectNode = -1;
-					selectItem = -1;
-					nodeStrAdapter.notifyDataSetChanged();
-				}
 			}
 			
 			break;
@@ -262,14 +241,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 1;
 				selectTextView(selectNode);
 				
-				if (selectItem >= 0) {
-					textViewList.get(selectNode).setText(nodeData.get(selectItem));
-					textViewList.get(selectNode).setBackground(getResources().
-							getDrawable(R.drawable.circular_bead_border_pink));
-					selectNode = -1;
-					selectItem = -1;
-					nodeStrAdapter.notifyDataSetChanged();
-				}
 			}
 			
 			break;
@@ -279,14 +250,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 2;
 				selectTextView(selectNode);
 				
-				if (selectItem >= 0) {
-					textViewList.get(selectNode).setText(nodeData.get(selectItem));
-					textViewList.get(selectNode).setBackground(getResources().
-							getDrawable(R.drawable.circular_bead_border_pink));
-					selectNode = -1;
-					selectItem = -1;
-					nodeStrAdapter.notifyDataSetChanged();
-				}
 			}
 			break;
 
@@ -295,14 +258,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 				selectNode = 3;
 				selectTextView(selectNode);
 				
-				if (selectItem >= 0) {
-					textViewList.get(selectNode).setText(nodeData.get(selectItem));
-					textViewList.get(selectNode).setBackground(getResources().
-							getDrawable(R.drawable.circular_bead_border_pink));
-					selectNode = -1;
-					selectItem = -1;
-					nodeStrAdapter.notifyDataSetChanged();
-				}
 			}
 			break;
 
@@ -310,15 +265,6 @@ public class TextFourNodeActivity extends BaseActivity implements
 			if (memoryType == 3) {
 				selectNode = 4;
 				selectTextView(selectNode);
-				if (selectItem >= 0) {
-					textViewList.get(selectNode).setText(nodeData.get(selectItem));
-					textViewList.get(selectNode).setBackground(getResources().
-							getDrawable(R.drawable.circular_bead_border_pink));
-					selectNode = -1;
-					selectItem = -1;
-					nodeStrAdapter.notifyDataSetChanged();
-				}
-				System.out.println("selectNode="+selectNode);
 			}
 			break;
 			
@@ -353,8 +299,18 @@ public class TextFourNodeActivity extends BaseActivity implements
 							getDrawable(R.drawable.circular_bead_border_white));
 				}
 			}
-			
 		}
+		
+		if (selectItem >= 0) {
+			textViewList.get(selectNode).setText(nodeData.get(selectItem));
+			textViewList.get(selectNode).setBackground(getResources().
+					getDrawable(R.drawable.circular_bead_border_pink));
+			selectMap.put(selectNode, selectItem);
+			selectNode = -1;
+			selectItem = -1;
+			nodeStrAdapter.notifyDataSetChanged();
+		}
+		
 	}
 	
 	@SuppressLint("NewApi")
@@ -376,7 +332,8 @@ public class TextFourNodeActivity extends BaseActivity implements
 				textViewList.get(i).setText(textViewList.get(i).getText().toString()+"√");
 			}else{
 				errorNum++;
-				textViewList.get(i).setText(textViewList.get(i).getText().toString()+"×");
+				textViewList.get(i).setText(textViewList.get(i).getText().toString()+"×"+
+				"\n"+tempData.get(i)+"√");
 			}
 		}
 		if (rightNum == textViewList.size()) {
@@ -433,7 +390,12 @@ public class TextFourNodeActivity extends BaseActivity implements
 				holder.node_string_tv.setBackground(
 						getResources().getDrawable(R.drawable.border_gray));
 			}
-
+			for (int i = 0; i < selectMap.size(); i++) {
+				if (selectMap.get(i) == position) {
+					holder.node_string_tv.setText("");
+				}
+			}
+			
 			return convertView;
 		}
 
@@ -452,6 +414,7 @@ public class TextFourNodeActivity extends BaseActivity implements
 			textViewList.get(selectNode).setText(nodeData.get(position));
 			textViewList.get(selectNode).setBackground(getResources().
 					getDrawable(R.drawable.circular_bead_border_pink));
+			selectMap.put(selectNode, selectItem);
 			selectNode = -1;
 			selectItem = -1;
 		}
@@ -472,6 +435,11 @@ public class TextFourNodeActivity extends BaseActivity implements
 		/** 设置不能点击取消 */
 		dialogHint.setCancelable(false);
 
+		long totalUseTime = (completeTime - startMemoryTime)/1000;
+		long memoryTime = (endMemoryTime - startMemoryTime)/1000;
+		if (memoryTime == 0) {
+			memoryTime = 1;
+		}
 		Date completeDate =  new Date(completeTime); 
 		String completeDateStr = DateUtil.format(completeDate, DateUtil.yyyy_MM_dd_HH_mm_ss);
 		
@@ -485,14 +453,20 @@ public class TextFourNodeActivity extends BaseActivity implements
 				.findViewById(R.id.confirm_tv);
 		TextView cancel_tv = (TextView) window
 				.findViewById(R.id.cancel_tv);
+		TextView dialog_text4_tv = (TextView) window
+				.findViewById(R.id.dialog_text4_tv);
 		
 		if (type == 1) {
-			dialog_text1_tv.setText("恭喜你");
+			dialog_text1_tv.setText("恭喜"+LocalDataHelper.
+					getInstance(mContext).getUserName());
 			dialog_text2_tv.setText("通过[文字导图-4个节点]考试");
+			dialog_text4_tv.setText("记忆用时:"+memoryTime+"s,总用时:"+totalUseTime+"s");
 			dialog_text3_tv.setText("通关时间:"+completeDateStr);
 		}else if (type ==2) {
-			dialog_text1_tv.setText("很抱歉");
+			dialog_text1_tv.setText("很抱歉"+LocalDataHelper.
+					getInstance(mContext).getUserName());
 			dialog_text2_tv.setText("挑战失败,错误数:"+errorNum);
+			dialog_text4_tv.setText("记忆用时:"+memoryTime+"s,总用时:"+totalUseTime+"s");
 			dialog_text3_tv.setText("挑战时间:"+completeDateStr);
 		}
 		

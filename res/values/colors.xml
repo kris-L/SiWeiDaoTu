@@ -41,5 +41,8 @@
     <color name="pink_bg_color">#FEE2EC</color>
     <color name="text_black_color">#2F2F2F</color>
 	<color name="text_gray2_color">#888888</color>
+	<color name="text_blue_color">#0080FF</color>
+	
+	
 
 </resources>

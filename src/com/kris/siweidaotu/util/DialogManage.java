@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.ui.PicEightNodeActivity;
+import com.kris.siweidaotu.ui.PicFourNodeActivity;
+import com.kris.siweidaotu.ui.PicTwelveNodeActivity;
 import com.kris.siweidaotu.ui.TextEightNodeActivity;
 import com.kris.siweidaotu.ui.TextFourNodeActivity;
 import com.kris.siweidaotu.ui.TextTwelveNodeActivity;
@@ -60,7 +63,8 @@ public class DialogManage {
 					Intent intent_four = new Intent(mContext, TextFourNodeActivity.class);
 					mContext.startActivity(intent_four);
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
-					
+					Intent intent_four = new Intent(mContext, PicFourNodeActivity.class);
+					mContext.startActivity(intent_four);
 				}
 				dialogHint.dismiss();
 			}
@@ -75,7 +79,8 @@ public class DialogManage {
 					Intent intent_four = new Intent(mContext, TextEightNodeActivity.class);
 					mContext.startActivity(intent_four);
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
-					
+					Intent intent_four = new Intent(mContext, PicEightNodeActivity.class);
+					mContext.startActivity(intent_four);
 				}
 				dialogHint.dismiss();
 			}
@@ -90,7 +95,8 @@ public class DialogManage {
 					Intent intent_four = new Intent(mContext, TextTwelveNodeActivity.class);
 					mContext.startActivity(intent_four);
 				}else if (type == Const.PICTURE_EXAM_TYPE) {
-					
+					Intent intent_four = new Intent(mContext, PicTwelveNodeActivity.class);
+					mContext.startActivity(intent_four);
 				}
 				dialogHint.dismiss();
 			}

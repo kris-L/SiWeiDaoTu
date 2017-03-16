@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kris.siweidaotu"
-    android:versionCode="1"
-    android:versionName="1.0.0" >
+    android:versionCode="4"
+    android:versionName="1.0.4" >
 
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/IOScheds"
-        >
+        android:theme="@style/IOScheds" >
         <activity
             android:name="com.kris.siweidaotu.MainActivity"
             android:label="@string/app_name" >
@@ -23,54 +27,71 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        
+
+        <!-- 友盟SDK配置 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58c7fc4a1c5dd01dc400018a" >
+        </meta-data>
+         <!-- Google Play渠道 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Market" />
+
         <!-- 文字-四个节点引导 -->
         <activity
             android:name=".ui.TextFourNodeActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
         <!-- 文字-八个节点引导 -->
         <activity
             android:name=".ui.TextEightNodeActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
         <!-- 文字-十二个节点引导 -->
         <activity
             android:name=".ui.TextTwelveNodeActivity"
             android:screenOrientation="landscape"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
-        <!-- 关于我们-->
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 关于我们 -->
         <activity
             android:name=".ui.AboutUsActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
-       <!-- 设置-->
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 设置 -->
         <activity
             android:name=".ui.SettingActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
-        <!-- 注册-->
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 注册 -->
         <activity
             android:name=".ui.RegisterActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
-            android:windowSoftInputMode="stateHidden|adjustResize" 
-            />
-        
-        
-        
-        
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 文字-四个节点引导 -->
+        <activity
+            android:name=".ui.PicFourNodeActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 文字-八个节点引导 -->
+        <activity
+            android:name=".ui.PicEightNodeActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <!-- 文字-十二个节点引导 -->
+        <activity
+            android:name=".ui.PicTwelveNodeActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
     </application>
 
 </manifest>

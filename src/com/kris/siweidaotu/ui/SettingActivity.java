@@ -8,6 +8,7 @@ import com.kris.siweidaotu.data.Const;
 import com.kris.siweidaotu.helper.LocalDataHelper;
 import com.kris.siweidaotu.ui.base.BaseActivity;
 import com.kris.siweidaotu.util.TimeUtil;
+import com.umeng.analytics.MobclickAgent;
 
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -52,20 +53,24 @@ public class SettingActivity extends BaseActivity implements OnClickListener{
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-//		MobclickAgent.onResume(this);
+		MobclickAgent.onResume(this);
+		if (LocalDataHelper.getInstance(this).isRegister()) {
+			log_out_btn.setText("已注册");
+		}else{
+			log_out_btn.setText("注册");
+		}
 	}
 
 	@Override
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
-//		MobclickAgent.onPause(this);
+		MobclickAgent.onPause(this);
 	}
 
 
 
 	private void initViews() {
-		
 		setting_agreement_tv = (TextView) findViewById(R.id.setting_agreement_tv);
 		setting_about_us_tv = (TextView) findViewById(R.id.setting_about_us_tv);
 		log_out_btn = (Button) findViewById(R.id.log_out_btn);
@@ -86,6 +91,8 @@ public class SettingActivity extends BaseActivity implements OnClickListener{
 			e.printStackTrace();
 		}
 		versions_tv.setText("v"+softVer);
+		
+		
 	}
 	
 	

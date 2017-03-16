@@ -6,6 +6,7 @@ import java.net.URLDecoder;
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.ui.base.BaseActivity;
 import com.kris.siweidaotu.util.DialogManage;
+import com.umeng.analytics.MobclickAgent;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -123,7 +124,7 @@ OnClickListener{
 			break;
 		}
 	}
-
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && service_wv.canGoBack()) {
@@ -136,15 +137,13 @@ OnClickListener{
 	@Override
 	protected void onResume() {
 		super.onResume();
-//		MobclickAgent.onPageStart(titleText);
-//		MobclickAgent.onResume(this);
+		MobclickAgent.onResume(this);
 	}
 
 	@Override
 	public void onPause() {
 		super.onPause();
-//		MobclickAgent.onPageEnd(titleText);
-//		MobclickAgent.onPause(this);
+		MobclickAgent.onPause(this);
 	}
 	
 	WebChromeClient webChromeClient = new WebChromeClient(){

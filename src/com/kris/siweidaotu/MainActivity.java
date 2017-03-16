@@ -2,12 +2,17 @@ package com.kris.siweidaotu;
 
 import com.kris.siweidaotu.R;
 import com.kris.siweidaotu.data.Const;
+import com.kris.siweidaotu.helper.LocalDataHelper;
+import com.kris.siweidaotu.ui.RegisterActivity;
 import com.kris.siweidaotu.ui.SettingActivity;
 import com.kris.siweidaotu.ui.TextFourNodeActivity;
 import com.kris.siweidaotu.ui.base.BaseActivity;
 import com.kris.siweidaotu.util.ActivityUtil;
+import com.kris.siweidaotu.util.AlertDialogWin;
+import com.kris.siweidaotu.util.DESUtil;
 import com.kris.siweidaotu.util.DialogManage;
 import com.kris.siweidaotu.util.TimeUtil;
+import com.umeng.analytics.MobclickAgent;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,7 +29,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private TextView text_exam_tv;
 	private TextView picture_exam_tv;
 	private TextView setting_tv;
-	
+	private boolean isRegister; 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	    initData();
 	}
 	
+
     private void initViews(){
     	text_exam_tv = (TextView) findViewById(R.id.text_exam_tv);
     	picture_exam_tv = (TextView) findViewById(R.id.picture_exam_tv);   	
@@ -47,7 +53,27 @@ public class MainActivity extends BaseActivity implements OnClickListener {
     private void initData() {
     	
     }
+    
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		MobclickAgent.onResume(this);
+		isRegister = LocalDataHelper.getInstance(this).isRegister();
+    	if (isRegister) {
+    		String registerCode = LocalDataHelper.getInstance(this).getRegisterCode();
+    		String shoujiInfo = LocalDataHelper.getInstance(this).getShoujiInfo();
+    		isRegister = MatchedRegister(registerCode,shoujiInfo);
+		}
+	}
 	
+	@Override
+	protected void onPause() {
+		super.onPause();
+		MobclickAgent.onPause(this);
+	}
+	
+
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -58,13 +84,23 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		case R.id.text_exam_tv:
 //			Intent intent_four = new Intent(this, TextFourNodeActivity.class);
 //			startActivity(intent_four);
-			DialogManage.selectNodeDialog(this, Const.TEXT_EXAM_TYPE);
+			if (isRegister) {
+				DialogManage.selectNodeDialog(this, Const.TEXT_EXAM_TYPE);
+			}else{
+				showTips("请先注册软件");
+				toActivity(RegisterActivity.class);
+			}
+			
 			
 			break;
 			
 		case R.id.picture_exam_tv:
-			DialogManage.selectNodeDialog(this, Const.PICTURE_EXAM_TYPE);
-			
+			if (isRegister) {
+				DialogManage.selectNodeDialog(this, Const.PICTURE_EXAM_TYPE);
+			}else{
+				showTips("请先注册软件");
+				toActivity(RegisterActivity.class);
+			}
 			break;
 			
 		case R.id.setting_tv:
@@ -104,6 +140,27 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
+	
+	public Boolean MatchedRegister(String registerCode,
+			String shoujiInfo) {
+		Boolean v5 = false;
+		String v1 = "";
+		try {
+			v1 = DESUtil.decryptDES(registerCode, "jiyiJMBC");
+		} catch (Exception v0) {
+			v0.printStackTrace();
+		}
+		String v2 = String.valueOf(shoujiInfo) + "jiyi8.cn";
+		String v4 = "VIP" + shoujiInfo + "jiyi8.cn";
+		String v3 = "SVIP" + shoujiInfo + "jiyi8.cn";
+		if ((v1.equals(v2)) || (v1.equals(v4))) {
+			v5 = true;
+		} else if (v1.equals(v3)) {
+			v5 = true;
+		} else {
+			v5 = false;
+		}
+		return v5;
+	}
 
 }

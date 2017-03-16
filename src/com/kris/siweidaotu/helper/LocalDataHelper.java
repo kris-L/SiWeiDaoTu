@@ -11,6 +11,8 @@ public class LocalDataHelper {
 	private boolean isRegister;
 	private String  registerCode;
 	private String  shoujiInfo;
+	private String  userName;
+	
 	
 	private volatile static LocalDataHelper instance = null;
 	
@@ -36,6 +38,7 @@ public class LocalDataHelper {
 		isRegister = SharePreferencesHelper.getInstance(context).getBoolean("isRegister", false);
 		registerCode = SharePreferencesHelper.getInstance(context).getString("registerCode", "");
 		shoujiInfo = SharePreferencesHelper.getInstance(context).getString("shoujiInfo", "");
+		userName = SharePreferencesHelper.getInstance(context).getString("userName", "");
 	}
 
 	
@@ -78,6 +81,17 @@ public class LocalDataHelper {
 		SharePreferencesHelper.getInstance(context).saveString("registerCode", registerCode);
 	}
 
+	
+	
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		SharePreferencesHelper.getInstance(context).saveString("userName", userName);
+		this.userName = userName;
+	}
+
 	public String getShoujiInfo() {
 		return shoujiInfo;
 	}
@@ -92,6 +106,7 @@ public class LocalDataHelper {
 		SharePreferencesHelper.getInstance(context).remove("isRegister");
 		SharePreferencesHelper.getInstance(context).remove("registerCode");
 		SharePreferencesHelper.getInstance(context).remove("shoujiInfo");
+		SharePreferencesHelper.getInstance(context).remove("userName");
 		getLocalData();
 		
 	}

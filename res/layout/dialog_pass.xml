@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="恭喜你"
-        android:textColor="@color/yellow"
+        android:textColor="@color/common_theme_color"
         android:textSize="28dp" 
         />
 
@@ -23,7 +23,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="通过[文字导图-4个节点]考试"
-        android:textColor="@color/yellow"
+        android:textColor="@color/common_theme_color"
+        android:textSize="20dp" />
+    
+     <TextView
+        android:id="@+id/dialog_text4_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text=""
+        android:textColor="@color/common_theme_color"
         android:textSize="20dp" />
 
     <TextView
@@ -33,7 +42,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:text="通关时间:2017-03-06 21:18:09"
-        android:textColor="@color/yellow"
+        android:textColor="@color/common_theme_color"
         android:textSize="20dp" />
 
     <LinearLayout
